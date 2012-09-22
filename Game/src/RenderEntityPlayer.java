@@ -5,16 +5,18 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderEntityPlayer extends RenderEntity {
 	public static final int GRID_SIZE = 16;
+	public static final int[] FRAMES = {0, 1, 1, 0, 0, 2, 2, 0};
+	public static final int LEFT_OFFSET = 3;
+	public static final int RIGHT_OFFSET = 9;
+	public static final int UP_OFFSET = 6;
+	public static final int DOWN_OFFSET = 0;
 	public RenderEntityPlayer(Camera camera) {
 		super(camera);
 	}
 	int getState(float Position)
 	{
-		if(Position%(GRID_SIZE*2)> GRID_SIZE*0.25 && Position%(GRID_SIZE*2) < GRID_SIZE*0.75)
-			return 1;
-		else if(Position%(GRID_SIZE*2)>GRID_SIZE* 1.25&&Position%(GRID_SIZE*2)<GRID_SIZE* 1.75)
-			return 2;
-		return 0;
+		return FRAMES[(int) (Position%(GRID_SIZE*2)/4)];
+		
 	}
 	
 	@Override
@@ -39,18 +41,17 @@ public class RenderEntityPlayer extends RenderEntity {
 		{
 		case UP:
 
-			state = 6 + getState(player.y);
-			http://pastebin.com/Uz0yW2KM
+			state = UP_OFFSET + getState(player.y);
 			break;
 		case DOWN:
-			state = 0  + getState(player.y);
+			state = DOWN_OFFSET  + getState(player.y);
 			
 			break;
 		case LEFT:
-			state = 3 + getState(player.x);
+			state = LEFT_OFFSET + getState(player.x);
 			break;
 		case RIGHT:
-			state = 9 + getState(player.x);
+			state = RIGHT_OFFSET + getState(player.x);
 
 			break;
 		}
