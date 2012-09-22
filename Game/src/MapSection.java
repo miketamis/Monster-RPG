@@ -3,13 +3,18 @@ import java.util.Random;
 
 public class MapSection {
 	 EntityManger entityManger;
-	 int mapXSize = 40;
-	 int mapYSize = 40;
+	 int mapXSize = 10;
+	 int mapYSize = 10;
+	 int x,y;
 	public int[][] tileMap;
 	public int[][] tileBlockMap;
 	public Tile[] tiles = {null,new TileLongGrass(),null};
 	Random rand = new Random();
-	public MapSection(World world) {
+	private World objWorld;
+	public MapSection(World world, int mapstartx, int mapstarty) {
+		x = mapstartx;
+		y = mapstarty;
+		objWorld = world;
 		tileMap = new int[mapXSize][mapYSize];
 		tileBlockMap = new int[mapXSize][mapYSize];
 		
@@ -32,10 +37,10 @@ public class MapSection {
 	}
 	public boolean MoveOver(int x, int y) {
 		// TODO Auto-generated method stub
-		return tileBlockMap[x][y] != 2;
+		return objWorld.getTile(x, y) != 2;
 	}
 	public void stepOn(EntityPlayer entityPlayer, int x, int y) {
-		Tile tile = tiles[tileBlockMap[x][y]];
+		Tile tile = tiles[objWorld.getTile(x, y) - 6];
 		if (tile != null)
 		tile.stepOn(entityPlayer,x,y);
 		

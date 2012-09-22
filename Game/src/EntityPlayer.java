@@ -11,8 +11,8 @@ public class EntityPlayer extends Entity {
 	public EntityPlayer(MapSection mapSection) {
 		super(mapSection);
 		Random rand = new Random();
-		x = 16*rand.nextInt(20);
-		y = 16*rand.nextInt(18);
+		x = 0;
+		y = 0;
 
 	}
 	boolean nextStep = true;
@@ -28,7 +28,7 @@ public class EntityPlayer extends Entity {
 			else if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {rotation = Direction.DOWN;if (objMapSection.MoveOver((int)x/16,(int)y/16+1))Moving = true;}
 			if(nextStep)
 			{
-			objMapSection.stepOn(this,(int)x/16,(int)y/16);
+				objMapSection.stepOn(this,(int)x/16,(int)y/16);
 			nextStep = false;
 			}
 		}
