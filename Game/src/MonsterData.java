@@ -1,8 +1,8 @@
 public class MonsterData {
-   public static void main(String args[]){
-	   
-	   Monster monOne = new Monster("Pikachu");
-	   Monster monTwo = new Monster("Charmander");
+
+static Monster[] monsters = {new Monster("Pikachu") ,new Monster("Charmander")};
+
+  public static void main(String args[]){	   
    }
 
 }
