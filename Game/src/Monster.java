@@ -7,7 +7,7 @@ public class Monster{
 	
 
 public void printMonster(){
-	      System.out.println("Name:"+ name );
+	      System.out.println("Found:"+ name );
 }
 	
 }
