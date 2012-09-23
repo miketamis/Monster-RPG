@@ -1,5 +1,3 @@
-import java.io.*;
-
 public class MonsterData {
    public static void main(String args[]){
 	   

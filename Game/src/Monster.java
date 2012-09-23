@@ -1,4 +1,4 @@
-import java.io.*;
+
 
 public class Monster{
 	String name;
@@ -7,7 +7,9 @@ public class Monster{
 		this.name = name;
 	}
 	
+
 public void printMonster(){
 	      System.out.println("Name:"+ name );
-}	
+}
+	
 }
