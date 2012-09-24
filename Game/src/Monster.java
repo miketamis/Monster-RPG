@@ -1,10 +1,11 @@
 public class Monster{
 	String name;
-         String type;
-         int tier;	
+        String type;
+        int tier;	
+
 	public Monster(String name,String Type,int Tier){
-                  type = Type;
-                  tier = Tier;
+                this.type = Type;
+                this.tier = Tier;
 		this.name = name;
 	}
 	
