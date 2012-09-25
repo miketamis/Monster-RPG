@@ -23,7 +23,11 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 	private void CreateWildMonster(Monster monster) {
 		Random generator = new Random();
 		int lvl = generator.nextInt(10);
-		WildMonster wild = new WildMonster(monster.name, monster.type, monster.tier, lvl);
+		int hp = monster.hp;
+		int atk = (monster.atk*lvl);
+		int def = (monster.def*lvl);
+		int spd = monster.spd;
+		WildMonster wild = new WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd);
 		wild.printWildMonster();
 	}
 }
