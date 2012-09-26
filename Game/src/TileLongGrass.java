@@ -4,7 +4,7 @@ import java.util.Random;
 public class TileLongGrass extends Tile {
 	
 public static boolean available = false;
-
+public static WildMonster currentWild;
 public static final int CHANCE_OF_FINDING_MONSTER = 2;
 	@Override
 	public void stepOn(EntityPlayer entityPlayer, int x, int y) {
@@ -14,14 +14,16 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 		
                 if(generator.nextInt(CHANCE_OF_FINDING_MONSTER) == 0){
 		         MonsterData.monsters[Identify].printMonster();
-                 CreateWildMonster(MonsterData.monsters[Identify]);               
+		        
+                 CreateWildMonster(MonsterData.monsters[Identify]); 
+                 currentWild = CreateWildMonster(MonsterData.monsters[Identify]);              
                  }
                  else
                 System.out.println("No monster");
                
 	}
 
-	public void CreateWildMonster(Monster monster) {
+	private WildMonster CreateWildMonster(Monster monster) {
 		Random generator = new Random();
 		int lvl = generator.nextInt(10);
 		int hp = monster.hp;
@@ -32,6 +34,7 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 		WildMonster wild = new  WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd);
 		wild.printWildMonster();
 		available = true;
+		return wild;
 	}
 	
 	public static void catchWildMonster(WildMonster monster){

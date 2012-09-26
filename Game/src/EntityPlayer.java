@@ -33,7 +33,7 @@ public class EntityPlayer extends Entity {
 			}
 			if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)){
 				if (TileLongGrass.available = true){
-					TileLongGrass.catchWildMonster(WildMonster(wild));
+					TileLongGrass.catchWildMonster(TileLongGrass.currentWild);
 				}
 			}
 		}
