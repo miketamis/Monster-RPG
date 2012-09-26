@@ -35,15 +35,17 @@ public class CameraBattle extends Camera {
 		GL11.glBlendFunc( GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA); 
 		GL11.glEnable(GL11.GL_BLEND);  
 		GL11.glBegin(GL11.GL_QUADS);
+		float y = (float) (hexTile.y + (hexTile.even ? 0:0.5));
+		
 		
 		GL11.glTexCoord2f((texture.getWidth()/12), 0);
-		GL11.glVertex2f(hexTile.x*16  , hexTile.y*16 - 6);
+		GL11.glVertex2f(hexTile.x*16  , y*16 - 6);
 		GL11.glTexCoord2f((texture.getWidth()/12), texture.getHeight());
-		GL11.glVertex2f(hexTile.x*16 , hexTile.y*16 + 22-6);
+		GL11.glVertex2f(hexTile.x*16 , y*16 + 22-6);
 		GL11.glTexCoord2f((texture.getWidth()/12)+texture.getWidth()/12, texture.getHeight());
-		GL11.glVertex2f(hexTile.x*16 + 16 ,hexTile.y*16 + 22-6);
+		GL11.glVertex2f(hexTile.x*16 + 16 ,y*16 + 22-6);
 		GL11.glTexCoord2f((texture.getWidth()/12)+texture.getWidth()/12, 0);
-		GL11.glVertex2f(hexTile.x*16 + 16 ,hexTile.y*16-6 );
+		GL11.glVertex2f(hexTile.x*16 + 16 ,y*16-6 );
 		
 		GL11.glEnd();
 		GL11.glPopMatrix();
