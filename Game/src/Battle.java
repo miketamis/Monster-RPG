@@ -6,15 +6,19 @@ public class Battle {
 	
 	CameraBattle camera;
 	 public Battle(){
-		camera = new CameraBattle();
-		Pokemon.game.camera = camera;
-		for(int x = 0; x > WIDTH; x++)
-		{
-			for(int y = 0; y > HEIGHT; y++){
-				hextiles[x][y] = new HexTile(x, y, x % 2 == 0);
-				
+		 
+		 for(int x = 0; x < WIDTH; x++)
+			{
+				for(int y = 0; y < HEIGHT; y++){
+					hextiles[x][y] = new HexTile(x, y, x % 2 == 0);
+					
+				}
 			}
-		}
+		camera = new CameraBattle(this);
+		
+		Pokemon.game.camera = camera;
+		camera.render();
+		
 	}
 	public void start(WildMonster currentWild) {
 		

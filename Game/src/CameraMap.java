@@ -6,7 +6,7 @@ import java.util.Map;
 public class CameraMap extends Camera {
 	Map entityRenderMap = new HashMap();
 	EntityManger objEntityManger;
-	public TextureLoader textureLoader;
+	
 	public MapSection objMapSection;
 	TileSet tile;
 	int viewXSize = 26;
@@ -14,11 +14,12 @@ public class CameraMap extends Camera {
 	EntityPlayer player;
 	float x,y;
 	public CameraMap(MapSection mapSection) {
+		super();
 		objEntityManger = mapSection.entityManger;
 		objMapSection = mapSection;
 		player = new EntityPlayer(objMapSection);
 		objEntityManger.addEntity(player);
-		textureLoader = new TextureLoader();
+		
 		tile = new TileSet(this,"sprites/Pokemon_tileset.png",1,1,16,16);
 		entityRenderMap.put(EntityPlayer.class,new RenderEntityPlayer(this));
 	}
