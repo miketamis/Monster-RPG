@@ -10,6 +10,7 @@ import org.lwjgl.opengl.GL11;
 public class Pokemon {
 
 	World world;
+	Camera camera;
 	/** position of quad */
 	float x = 400, y = 300;
 	/** angle of quad rotation */
@@ -36,6 +37,7 @@ public class Pokemon {
 			System.exit(0);
 		}
 		world = new World(this);
+		camera = world.camera;
 		initGL(); // init OpenGL
 		getDelta(); // call once before loop to initialise lastFrame
 		lastFPS = getTime(); // call before loop to initialise fps timer

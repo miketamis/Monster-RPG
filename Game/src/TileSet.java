@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 
 public class TileSet {
 	Texture texture = null; 
-	public TileSet(Camera camera, String string, int i, int j, int k, int l) {
+	public TileSet(CameraMap camera, String string, int i, int j, int k, int l) {
 		TextureLoader textloader = camera.textureLoader;
 		try {
 			texture = textloader.getTexture(string);

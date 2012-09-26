@@ -1,7 +1,7 @@
 
 public class RenderEntity {
-Camera objCamera;
-	public RenderEntity(Camera camera) {
+CameraMap objCamera;
+	public RenderEntity(CameraMap camera) {
 		objCamera = camera;
 	}
 

@@ -10,7 +10,7 @@ public class RenderEntityPlayer extends RenderEntity {
 	public static final int RIGHT_OFFSET = 9;
 	public static final int UP_OFFSET = 6;
 	public static final int DOWN_OFFSET = 0;
-	public RenderEntityPlayer(Camera camera) {
+	public RenderEntityPlayer(CameraMap camera) {
 		super(camera);
 	}
 	int getState(float Position)
