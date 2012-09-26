@@ -8,11 +8,13 @@ public class EntityPlayer extends Entity {
 	public Direction rotation = Direction.DOWN;
 	float speed = 0.05f;
 	boolean Moving = false;
+	PlayerMonsterStore monsterStore;
 	public EntityPlayer(MapSection mapSection) {
 		super(mapSection);
 		Random rand = new Random();
 		x = 16*rand.nextInt(20);
 		y = 16*rand.nextInt(18);
+		monsterStore = new PlayerMonsterStore();
 
 	}
 	boolean nextStep = true;
@@ -33,7 +35,7 @@ public class EntityPlayer extends Entity {
 			}
 			if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)){
 				if (TileLongGrass.available = true){
-					PlayerMonsterStore.catchWildMonster(TileLongGrass.currentWild);
+					monsterStore.catchWildMonster(TileLongGrass.currentWild);
 				}
 			}
 		}
