@@ -9,6 +9,13 @@ public class CameraBattle extends Camera {
 	Texture texture = null;
 	public CameraBattle(Battle battle) {
 		
+		try {
+			texture = textureLoader.getTexture("sprites/ash.png");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		objBattle = battle;
 	}
 	@Override
@@ -23,12 +30,7 @@ public class CameraBattle extends Camera {
 	}
 	}
 	private void renderHex(HexTile hexTile) {
-		try {
-			texture = textureLoader.getTexture("sprites/ash.png");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		GL11.glPushMatrix();
 		texture.bind();
 		GL11.glColor3f(1,1,1);
