@@ -4,7 +4,10 @@ public class Battle {
 	static int HEIGHT = 5;
 	HexTile[][]hextiles = new HexTile[WIDTH][HEIGHT];
 	
+	CameraBattle camera;
 	 public Battle(){
+		camera = new CameraBattle();
+		Pokemon.game.camera = camera;
 		for(int x = 0; x > WIDTH; x++)
 		{
 			for(int y = 0; y > HEIGHT; y++){

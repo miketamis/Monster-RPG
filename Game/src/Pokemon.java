@@ -23,7 +23,7 @@ public class Pokemon {
 	int fps;
 	/** last fps time */
 	long lastFPS;
-
+	public static Pokemon game;
 	public void start() {
 		try {
 			
@@ -113,13 +113,15 @@ public class Pokemon {
 		GL11.glLoadIdentity();
 			
 
-		world.camera.render();
+		camera.render();
 		// R,G,B,A Set The Color To Blue One Time Only
 
 	}
 
 	public static void main(String[] argv) {
+		
 		Pokemon timerExample = new Pokemon();
+		game = timerExample;
 		timerExample.start();
 	}
 }
