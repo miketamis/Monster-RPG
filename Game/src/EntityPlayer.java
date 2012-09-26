@@ -31,6 +31,11 @@ public class EntityPlayer extends Entity {
 			objMapSection.stepOn(this,(int)x/16,(int)y/16);
 			nextStep = false;
 			}
+			if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)){
+				if (TileLongGrass.available = true){
+					TileLongGrass.catchWildMonster(WildMonster(wild));
+				}
+			}
 		}
 
 		if(Moving)

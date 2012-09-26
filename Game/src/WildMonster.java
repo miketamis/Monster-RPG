@@ -8,6 +8,9 @@ int hp;
 int atk;
 int def;
 int spd;
+int id;
+Object active;
+
 
 public WildMonster(String Name, String Type, int Tier, int Lvl, int HP, int ATK, int DEF, int SPD) {
 	this.name = Name;
@@ -18,8 +21,7 @@ public WildMonster(String Name, String Type, int Tier, int Lvl, int HP, int ATK,
 	this.atk = ATK;
 	this.def = DEF;
 	this.spd = SPD;
-		// TODO Auto-generated constructor stub
-	}
+}
 public void printWildMonster(){
     System.out.println("GENERATED WILD MONSTER:");
     System.out.println("Name:"+ name );
