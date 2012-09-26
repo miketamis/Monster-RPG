@@ -15,8 +15,9 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
                 if(generator.nextInt(CHANCE_OF_FINDING_MONSTER) == 0){
 		         MonsterData.monsters[Identify].printMonster();
 		        
-                 CreateWildMonster(MonsterData.monsters[Identify]); 
-                 currentWild = CreateWildMonster(MonsterData.monsters[Identify]);              
+                
+                 currentWild = CreateWildMonster(MonsterData.monsters[Identify]);      
+                 new Battle().start(currentWild);
                  }
                  else
                 System.out.println("No monster");
