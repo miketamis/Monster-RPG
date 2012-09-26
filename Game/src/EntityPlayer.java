@@ -22,13 +22,14 @@ public class EntityPlayer extends Entity {
 		if(x%16 == 0&&y%16 == 0)
 		{
 			Moving = false;
-			if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {rotation = Direction.LEFT; if (objMapSection.MoveOver((int)x/16-1,(int)y/16)) Moving = true;}
-			else if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {rotation = Direction.RIGHT; if (objMapSection.MoveOver((int)x/16+1,(int)y/16)) Moving = true;}
-			else if (Keyboard.isKeyDown(Keyboard.KEY_UP))  {rotation = Direction.UP;if (objMapSection.MoveOver((int)x/16,(int)y/16-1)) Moving = true;}
-			else if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {rotation = Direction.DOWN;if (objMapSection.MoveOver((int)x/16,(int)y/16+1))Moving = true;}
+			if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {rotation = Direction.LEFT; if (objWorld.MoveOver((int)x/16-1,(int)y/16)) Moving = true;}
+			else if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {rotation = Direction.RIGHT; if (objWorld.MoveOver((int)x/16+1,(int)y/16)) Moving = true;}
+			else if (Keyboard.isKeyDown(Keyboard.KEY_UP))  {rotation = Direction.UP;if (objWorld.MoveOver((int)x/16,(int)y/16-1)) Moving = true;}
+			else if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {rotation = Direction.DOWN;if (objWorld.MoveOver((int)x/16,(int)y/16+1))Moving = true;}
 			if(nextStep)
 			{
-				objMapSection.stepOn(this,(int)x/16,(int)y/16);
+				System.out.println("Player X:"+ x + "Player Y:" + y);
+				objWorld.stepOn(this,(int)x/16,(int)y/16);
 			nextStep = false;
 			}
 		}

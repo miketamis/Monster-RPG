@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Pokemon {
 
-	World world;
+	public static World world;
 	/** position of quad */
 	float x = 400, y = 300;
 	/** angle of quad rotation */

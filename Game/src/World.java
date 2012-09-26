@@ -1,6 +1,6 @@
 
 public class World {
-	
+	public Tile[] tiles = {null,new TileLongGrass(),null};
 	Pokemon pokemon;
 	public static final int GRID_SIZE = 16;
 	MapSection mapSections[] = new MapSection[4]; 
@@ -66,5 +66,14 @@ public class World {
 			
 		
 	}
+	public void stepOn(EntityPlayer entityPlayer, int i, int j) {
+		Tile tile = tiles[getTile(i,j) - 6];
+		if (tile != null)
+		tile.stepOn(entityPlayer,i,j);
+	}
+	public boolean MoveOver(int i, int j) {
+		return getTile(i, j) != 2;
+	}
+	
 
 }

@@ -10,7 +10,7 @@ public class MapSection {
 	public int[][] tileBlockMap;
 	public Tile[] tiles = {null,new TileLongGrass(),null};
 	Random rand = new Random();
-	private World objWorld;
+	World objWorld;
 	public MapSection(World world, int mapstartx, int mapstarty) {
 		x = mapstartx;
 		y = mapstarty;
@@ -35,15 +35,7 @@ public class MapSection {
 	public void update(int delta) {
 		entityManger.update(delta);
 	}
-	public boolean MoveOver(int x, int y) {
-		// TODO Auto-generated method stub
-		return objWorld.getTile(x, y) != 2;
-	}
-	public void stepOn(EntityPlayer entityPlayer, int x, int y) {
-		Tile tile = tiles[objWorld.getTile(x, y) - 6];
-		if (tile != null)
-		tile.stepOn(entityPlayer,x,y);
-		
-	}
+
+	
 
 }
