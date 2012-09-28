@@ -9,18 +9,11 @@ public class CameraBattle extends Camera {
 	Texture texture = null;
 	public CameraBattle(Battle battle) {
 		
-		try {
-			texture = textureLoader.getTexture("sprites/ash.png");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		objBattle = battle;
 	}
 	@Override
 	public void render() {
-	for(int x = 0;x<5;x++)
+	for(int x = 0;x<9;x++)
 	{
 		for(int y = 0;y<5;y++)
 		{
@@ -30,28 +23,35 @@ public class CameraBattle extends Camera {
 	}
 	}
 	private void renderHex(HexTile hexTile) {
-	
+		try {
+			texture = textureLoader.getTexture("sprites/hexagonAlpa32.png");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		GL11.glPushMatrix();
 		texture.bind();
 		GL11.glColor3f(1,1,1);
 		GL11.glBlendFunc( GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA); 
 		GL11.glEnable(GL11.GL_BLEND);  
 		GL11.glBegin(GL11.GL_QUADS);
-		float y = (float) (hexTile.y + (hexTile.even ? 0:0.5));
+		float y = (float) (hexTile.y + (hexTile.even ? 2:2.5));
+		float x = (float) (hexTile.x + ((-1.7*hexTile.x))+8);
 		
 		
-		GL11.glTexCoord2f((texture.getWidth()/12), 0);
-		GL11.glVertex2f(hexTile.x*16  , y*16 - 6);
-		GL11.glTexCoord2f((texture.getWidth()/12), texture.getHeight());
-		GL11.glVertex2f(hexTile.x*16 , y*16 + 22-6);
-		GL11.glTexCoord2f((texture.getWidth()/12)+texture.getWidth()/12, texture.getHeight());
-		GL11.glVertex2f(hexTile.x*16 + 16 ,y*16 + 22-6);
-		GL11.glTexCoord2f((texture.getWidth()/12)+texture.getWidth()/12, 0);
-		GL11.glVertex2f(hexTile.x*16 + 16 ,y*16-6 );
+		
+		GL11.glTexCoord2f((texture.getWidth()), 0);
+		GL11.glVertex2f(x*32  , y*32 );
+		GL11.glTexCoord2f((texture.getWidth()), texture.getHeight());
+		GL11.glVertex2f(x*32 , y*32 + 32 );
+		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), texture.getHeight());
+		GL11.glVertex2f(x*32 + 32 ,y*32 + 32);
+		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), 0);
+		GL11.glVertex2f(x*32 + 32 ,y*32);
 		
 		GL11.glEnd();
 		GL11.glPopMatrix();
-		
+	
 	}
 }
 

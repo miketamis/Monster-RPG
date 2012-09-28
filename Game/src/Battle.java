@@ -1,6 +1,6 @@
 
 public class Battle {
-	static int  WIDTH = 5;
+	static int  WIDTH = 9;
 	static int HEIGHT = 5;
 	HexTile[][]hextiles = new HexTile[WIDTH][HEIGHT];
 	
