@@ -2,7 +2,9 @@
 public class Battle {
 	static int  WIDTH = 9;
 	static int HEIGHT = 5;
+static WildMonster CurrentWild = TileLongGrass.currentWild; 
 	HexTile[][]hextiles = new HexTile[WIDTH][HEIGHT];
+	
 	
 	CameraBattle camera;
 	 public Battle(){
@@ -20,10 +22,8 @@ public class Battle {
 		camera.render();
 		
 	}
-	public void start(WildMonster currentWild) {
-		
-		
-		
+	public void start() {
+			CameraBattle.renderWild();
 	}
-
+	
 }

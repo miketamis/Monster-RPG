@@ -17,7 +17,8 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 		        
                 
                  currentWild = CreateWildMonster(MonsterData.monsters[Identify]);      
-                 new Battle().start(currentWild);
+                 new Battle().start();
+          
                  }
                  else
                 System.out.println("No monster");
@@ -31,8 +32,10 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 		int atk = (monster.atk*lvl);
 		int def = (monster.def*lvl);
 		int spd = monster.spd;
+		int x = 1;
+		int y = 1;
 		
-		WildMonster wild = new  WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd);
+		WildMonster wild = new  WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd, x, y);
 		wild.printWildMonster();
 		available = true;
 		return wild;
