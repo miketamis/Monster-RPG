@@ -23,7 +23,7 @@ static WildMonster CurrentWild = TileLongGrass.currentWild;
 		
 	}
 	public void start() {
-			CameraBattle.renderWild();
+			
 	}
 	
 }

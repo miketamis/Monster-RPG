@@ -6,8 +6,8 @@ public class Monster{
         int atk;
         int def;
         int spd;
-
-	public Monster(String name,String Type,int Tier, int HP, int ATK, int DEF, int SPD){
+        String sprite;
+	public Monster(String name,String Type,int Tier, int HP, int ATK, int DEF, int SPD, String Sprite){
                 this.type = Type;
                 this.tier = Tier;
 		        this.name = name;
@@ -15,6 +15,7 @@ public class Monster{
 		        this.atk = ATK;
 		        this.def = DEF;
 		        this.hp = HP;
+		        this.sprite = Sprite;
 	}
 	
 

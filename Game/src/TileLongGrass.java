@@ -35,7 +35,7 @@ public static final int CHANCE_OF_FINDING_MONSTER = 2;
 		int x = 1;
 		int y = 1;
 		
-		WildMonster wild = new  WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd, x, y);
+		WildMonster wild = new  WildMonster(monster.name, monster.type, monster.tier, lvl, hp, atk, def, spd, x, y, monster.sprite);
 		wild.printWildMonster();
 		available = true;
 		return wild;

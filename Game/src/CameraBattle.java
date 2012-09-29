@@ -13,6 +13,7 @@ public class CameraBattle extends Camera {
 	}
 	@Override
 	public void render() {
+	
 	for(int x = 0;x<9;x++)
 	{
 		for(int y = 0;y<5;y++)
@@ -21,6 +22,7 @@ public class CameraBattle extends Camera {
 			renderHex(objBattle.hextiles[x][y]);
 		}
 	}
+	renderWild(TileLongGrass.currentWild);
 	}
 	private void renderHex(HexTile hexTile) {
 		try {
@@ -53,11 +55,11 @@ public class CameraBattle extends Camera {
 		GL11.glPopMatrix();
 	
 	}
-	public void renderWild() {
+	public void renderWild(WildMonster currentWild) {
 		 int currentWildx = TileLongGrass.currentWild.x;
 		 int currentWildy = TileLongGrass.currentWild.y;
 		try {
-		texture = textureLoader.getTexture("sprites/hexagon16.png");
+		texture = textureLoader.getTexture(TileLongGrass.currentWild.sprite);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,13 +76,13 @@ public class CameraBattle extends Camera {
 		
 		
 		GL11.glTexCoord2f((texture.getWidth()), 0);
-		GL11.glVertex2f(x*16  , y*16 );
+		GL11.glVertex2f(x*64  , y*64 );
 		GL11.glTexCoord2f((texture.getWidth()), texture.getHeight());
-		GL11.glVertex2f(x*16 , y*16 + 16 );
+		GL11.glVertex2f(x*64 , y*64 + 64 );
 		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), texture.getHeight());
-		GL11.glVertex2f(x*16 + 16 ,y*16 + 16);
+		GL11.glVertex2f(x*64 + 64 ,y*64 + 64);
 		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), 0);
-		GL11.glVertex2f(x*16 + 16 ,y*16);
+		GL11.glVertex2f(x*64 + 64 ,y*64);
 		
 		GL11.glEnd();
 		GL11.glPopMatrix();

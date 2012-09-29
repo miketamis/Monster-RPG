@@ -16,9 +16,10 @@ int id;
 int x;
 int y;
 Object active;
+String sprite;
 
 
-public WildMonster(String Name, String Type, int Tier, int Lvl, int HP, int ATK, int DEF, int SPD, int X, int Y) {
+public WildMonster(String Name, String Type, int Tier, int Lvl, int HP, int ATK, int DEF, int SPD, int X, int Y, String Sprite) {
 	this.name = Name;
 	this.type = Type;
 	this.tier = Tier;
@@ -29,6 +30,8 @@ public WildMonster(String Name, String Type, int Tier, int Lvl, int HP, int ATK,
 	this.spd = SPD;
 	this.x = X;
 	this.y = Y;
+	this.sprite = Sprite;
+	
 }
 public void printWildMonster(){
     System.out.println("GENERATED WILD MONSTER:");
