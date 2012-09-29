@@ -23,6 +23,7 @@ public class CameraBattle extends Camera {
 		}
 	}
 	renderWild(TileLongGrass.currentWild);
+	renderYourMonster();
 	}
 	private void renderHex(HexTile hexTile) {
 		try {
@@ -89,7 +90,38 @@ public class CameraBattle extends Camera {
 	
 	
 }
-
+	public void renderYourMonster() {
+				try {
+		texture = textureLoader.getTexture(PlayerMonsterStore.monsters[0].sprite);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		GL11.glPushMatrix();
+		texture.bind();
+		GL11.glColor3f(1,1,1);
+		GL11.glBlendFunc( GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA); 
+		GL11.glEnable(GL11.GL_BLEND);  
+		GL11.glBegin(GL11.GL_QUADS);
+		float y = (float) PlayerMonsterStore.monsters[0].y;
+		float x = (float) PlayerMonsterStore.monsters[0].x;
+		
+		
+		
+		GL11.glTexCoord2f((texture.getWidth()), 0);
+		GL11.glVertex2f(x*32  , y*32 );
+		GL11.glTexCoord2f((texture.getWidth()), texture.getHeight());
+		GL11.glVertex2f(x*32 , y*32 + 32 );
+		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), texture.getHeight());
+		GL11.glVertex2f(x*32 + 32 ,y*32 + 32);
+		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), 0);
+		GL11.glVertex2f(x*32 + 32 ,y*32);
+		
+		GL11.glEnd();
+		GL11.glPopMatrix();
+	
+	
+}
 	
 
 }

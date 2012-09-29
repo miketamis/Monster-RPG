@@ -1,8 +1,11 @@
 
 
+import java.applet.Applet;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
@@ -24,7 +27,9 @@ public class Pokemon {
 	/** last fps time */
 	long lastFPS;
 	public static Pokemon game;
+	
 	public void start() {
+		
 		try {
 			
 			Display.setDisplayMode(new DisplayMode(800, 640));
@@ -57,6 +62,12 @@ public class Pokemon {
 
 	public void update(int delta) {
 		world.update(delta);
+	
+		if (Mouse.isButtonDown(0)){
+			x = Mouse.getX();
+			y = Mouse.getY();
+			System.out.println("X:" + x + "Y:" + y);
+		}
 
 
 		updateFPS(); // update FPS Counter
