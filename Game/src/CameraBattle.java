@@ -70,19 +70,19 @@ public class CameraBattle extends Camera {
 		GL11.glBlendFunc( GL11.GL_SRC_ALPHA,GL11.GL_ONE_MINUS_SRC_ALPHA); 
 		GL11.glEnable(GL11.GL_BLEND);  
 		GL11.glBegin(GL11.GL_QUADS);
-		float y = (float) (currentWildy);
-		float x = (float) (currentWildx);
+		float y = (float) (2);
+		float x = (float) (5.2);
 		
 		
 		
 		GL11.glTexCoord2f((texture.getWidth()), 0);
-		GL11.glVertex2f(x*64  , y*64 );
+		GL11.glVertex2f(x*32  , y*32 );
 		GL11.glTexCoord2f((texture.getWidth()), texture.getHeight());
-		GL11.glVertex2f(x*64 , y*64 + 64 );
+		GL11.glVertex2f(x*32 , y*32 + 32 );
 		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), texture.getHeight());
-		GL11.glVertex2f(x*64 + 64 ,y*64 + 64);
+		GL11.glVertex2f(x*32 + 32 ,y*32 + 32);
 		GL11.glTexCoord2f((texture.getWidth())+texture.getWidth(), 0);
-		GL11.glVertex2f(x*64 + 64 ,y*64);
+		GL11.glVertex2f(x*32 + 32 ,y*32);
 		
 		GL11.glEnd();
 		GL11.glPopMatrix();
